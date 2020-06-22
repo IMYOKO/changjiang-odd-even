@@ -1,29 +1,41 @@
 # changjiang-odd-even
 
 ## Project setup
+
 ```
 yarn install
 ```
 
 ### Compiles and hot-reloads for development
+
 ```
-yarn run serve
+yarn run dev
 ```
 
-### Compiles and minifies for production
+### Compiles and minifies for production test
+
 ```
-yarn run build
+yarn run build: test
+```
+
+### Compiles and minifies for production prod
+
+```
+yarn run build: prod
 ```
 
 ### Run your tests
+
 ```
 yarn run test
 ```
 
 ### Lints and fixes files
+
 ```
 yarn run lint
 ```
 
 ### Customize configuration
+
 See [Configuration Reference](https://cli.vuejs.org/config/).
