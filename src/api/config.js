@@ -27,6 +27,7 @@ const baseURL = `${domain.common}/api`;
 
 const apiConfig = {
     login: `${baseURL}/AppLogin POST`,
+    withdrawal: `${baseURL}/Withdrawal POST`,
 };
 
 export default apiConfig

@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    home
     <!-- <HelloWorld msg="Welcome to Your Vue.js App" /> -->
   </div>
 </template>
@@ -13,3 +14,9 @@ export default {
   methods: {},
 };
 </script>
+
+<style lang="less" scoped>
+.home {
+  color: red;
+}
+</style>

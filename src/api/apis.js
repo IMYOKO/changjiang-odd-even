@@ -1,12 +1,14 @@
 import ApiRequest from './index'
 import config from './config'
+import store from '@/store/index'
 
 const api = new ApiRequest();
 api.axios.interceptors.request.use(
     (config) => {
-        // if (userClient.token) {
-        //     config.headers.common['utoken'] = userClient.token;
-        // }
+        if (localStorage.getItem('token')) {
+            config.headers.common['token'] = localStorage.getItem('token');
+        }
+        store.commit('Common/updateLoading', true, { root: true })
         const { url, params = {} } = config;
         if (url) {
             let matchArrs = url.match(/(:[^{:&/|_}]*)/g);
@@ -31,10 +33,12 @@ api.axios.interceptors.request.use(
 
 api.axios.interceptors.response.use(
     (data) => {
+        store.commit('Common/updateLoading', false, { root: true })
         return Promise.resolve(data);
     },
     (error) => {
         console.log({ error });
+        store.commit('Common/updateLoading', false, { root: true })
         return Promise.reject(error);
     }
 );

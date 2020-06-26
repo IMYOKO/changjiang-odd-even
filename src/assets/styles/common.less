@@ -1,38 +1,38 @@
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-ul {
-    margin: 0;
-    padding: 0;
-}
+.login,
+.register {
+    width: 100%;
+    height: 100%;
+    background: url("../../assets/images/login/login_bg@2x.png") center center no-repeat;
+    background-size: cover;
 
-ul,
-li {
-    list-style: none;
-}
+    .login-form-wrapper {
+        width: 522 / 32rem;
+        height: 452 / 32rem;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
 
-section:focus,
-button:focus,
-input:focus {
-    outline: none;
-}
+        background: url("../../assets/images/login/login_form@2x.png") center center no-repeat;
+        background-size: contain;
 
-body {
-    margin: 0;
-    -webkit-font-smoothing: antialiased;
-    -webkit-text-size-adjust: 100%;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
+        .login-form-content {
+            padding: 20/32rem 44/32rem;
 
-/*竖屏样式*/
-@media screen and (orientation:portrait) {
-    body {
-        transform-origin: 0 0;
-        transform: rotateZ(90deg) translateY(-100%);
-        /* overflow-y: hidden !important; */
+            .form-item {
+                margin-top: 1rem;
+
+                input {
+                    text-align: center;
+                    width: calc(100% - 2rem);
+                    border: none;
+                    padding: 0.5rem 1rem;
+                    border-radius: 54/32rem;
+                    background-color: #110d0b;
+                }
+            }
+
+        }
     }
+
 }
