@@ -1,4 +1,4 @@
-import apis from "@/api/apis";
+import apis from "@/request/index";
 
 const state = {
     token: localStorage.getItem('token') || '',
@@ -20,22 +20,22 @@ const mutations = {
 }
 
 const actions = {
-    async login({ commit, dispatch }, payload) {
+    async login({ commit }, payload) {
         try {
-            const { token } = await apis.login(payload)
-            commit('updateToken', token)
-            dispatch('withdrawal')
+            const res = await apis.login(payload)
+            commit('updateToken', res.token)
+            return Promise.resolve(res);
         } catch (error) {
-            console.log(error)
+            return Promise.reject(error);
         }
     },
     async withdrawal({ commit }) {
         try {
-            const userInfo = await apis.withdrawal()
-            console.log(userInfo)
-            commit('updateUserInfo', userInfo)
+            const res = await apis.withdrawal();
+            commit('updateUserInfo', res)
+            return Promise.resolve(res);
         } catch (error) {
-            console.log(error)
+            return Promise.reject(error);
         }
     },
 }

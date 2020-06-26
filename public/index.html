@@ -5,10 +5,8 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1" />
   <meta name="viewport"
-    content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
-    viewport-fit=cover" />
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
   <link rel="icon" href="<%= BASE_URL %>favicon.ico" />
-  <van-number-keyboard safe-area-inset-bottom />
   <title><%= htmlWebpackPlugin.options.title %></title>
 </head>
 
@@ -25,15 +23,9 @@
   (() => {
     const newRem = () => {
       const html = document.documentElement;
-      const windowWidth = html.getBoundingClientRect().width;
-      // if (windowWidth > 1200) {
-      //   html.style.fontSize = "120px";
-      // } else if (windowWidth < 32) {
-      //   html.style.fontSize = "32px";
-      // } else {
-      //   html.style.fontSize = windowWidth / 10 + "px";
-      // }
-      html.style.fontSize = windowWidth / (667 / 16) + "px";
+      const height = html.getBoundingClientRect().height;
+      const h = height / (375 / 16)
+      html.style.fontSize = h + "px";
       window.addEventListener("resize", newRem, false);
     };
     newRem();
