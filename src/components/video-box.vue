@@ -10,7 +10,6 @@
       preload="auto"
       webkit-playsinline
       playsinline
-      controls
       :src="'http://58.84.7.20:8081/vedio/'+item.FileName"
       v-for="(item, index) in playList"
       :key="index"
@@ -165,13 +164,13 @@ export default {
 <style lang="less" scoped>
 .video-wrapper {
   position: relative;
-  // padding-top: 56.25%;
+  padding-top: 56.25%;
 
   .video {
     display: block;
-    // position: absolute;
-    // left: 0;
-    // top: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
 
     &.active {
       z-index: 10;

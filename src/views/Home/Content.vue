@@ -1,9 +1,14 @@
 <template>
-  <div class="content-wrapper"></div>
+  <div class="content-wrapper">
+    <VideoBox />
+  </div>
 </template>
 
 <script>
-export default {};
+import VideoBox from "@/components/video-box";
+export default {
+  components: { VideoBox }
+};
 </script>
 
 <style lang="less" scoped>
