@@ -58,7 +58,7 @@ const withdrawal = () => {
  * 获取视频列表
 */
 const getVideo = () => {
-    return apiRequest.post(`${baseURL}/GetVedio`);
+    return apiRequest.post(`${baseURL}/GetVedio`, { responseType: 'arraybuffer' });
 }
 
 export default {
