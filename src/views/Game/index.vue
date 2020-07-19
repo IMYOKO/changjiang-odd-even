@@ -5,7 +5,8 @@
 </template>
 
 <script>
-import VideoBox from "@/components/video-box";
+// import VideoBox from "@/components/video-box";
+import VideoBox from "@/components/video";
 export default {
   components: { VideoBox },
   data() {
@@ -16,6 +17,6 @@ export default {
 
 <style lang="less" scoped>
 .game {
-  color: red;
+  background: #000;
 }
 </style>

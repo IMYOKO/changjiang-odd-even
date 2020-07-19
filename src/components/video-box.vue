@@ -1,6 +1,6 @@
 <template>
   <div class="video-wrapper">
-    <video
+    <!-- <video
       :ref="`video${index}`"
       class="video"
       :class="{'active': index === activeIndex}"
@@ -13,7 +13,27 @@
       :src="'http://58.84.7.20:8081/vedio/'+item.FileName"
       v-for="(item, index) in playList"
       :key="index"
+    >你的浏览器不支持video标签</video>-->
+    <video
+      class="video activeIndex"
+      width="100%"
+      height="100%"
+      muted
+      preload="auto"
+      webkit-playsinline
+      playsinline
+      src="rtmp://58.84.7.20:1935/hls/hls"
     >你的浏览器不支持video标签</video>
+    <!-- <video
+      class="video activeIndex"
+      width="100%"
+      height="100%"
+      muted
+      preload="auto"
+      webkit-playsinline
+      playsinline
+      src="http://58.84.7.20:8090/stream1.ts"
+    >你的浏览器不支持video标签</video>-->
   </div>
 </template>
 
@@ -30,7 +50,7 @@ export default {
     };
   },
   mounted() {
-    this.getVideo();
+    // this.getVideo();
   },
   methods: {
     videoPlay() {
