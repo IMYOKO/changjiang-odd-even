@@ -5,8 +5,7 @@
 </template>
 
 <script>
-// import VideoBox from "@/components/video-box";
-import VideoBox from "@/components/video";
+import VideoBox from "@/components/videoPlayer";
 export default {
   components: { VideoBox },
   data() {

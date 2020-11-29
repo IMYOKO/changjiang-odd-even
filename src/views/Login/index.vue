@@ -4,10 +4,10 @@
       <div class="title">游戏登录</div>
       <div class="login-form-content">
         <div class="form-item">
-          <input v-model="username" type="text" maxlength="11" name="" id="" placeholder="账号或手机号">
+          <input v-model="username" type="text" maxlength="11" name id placeholder="账号或手机号" />
         </div>
         <div class="form-item">
-          <input v-model="password" type="password" maxlength="16" name="" id="" placeholder="密码">
+          <input v-model="password" type="password" maxlength="16" name id placeholder="密码" />
         </div>
       </div>
       <div class="btn-wrapper">
@@ -25,11 +25,11 @@ export default {
   data() {
     return {
       username: "",
-      password: "",
+      password: ""
     };
   },
   computed: {
-    ...mapState("User", ["token", "userInfo"]),
+    ...mapState("User", ["token", "userInfo"])
   },
   mounted() {
     if (this.token) {
@@ -51,7 +51,7 @@ export default {
       try {
         const data = {
           username: this.username,
-          password: this.password,
+          password: this.password
         };
         await this.login(data);
         this.$toast({
@@ -60,7 +60,7 @@ export default {
           duration: 1000,
           onClose: () => {
             this.goHome();
-          },
+          }
         });
       } catch (e) {
         this.$toast("登录失败");
@@ -71,7 +71,7 @@ export default {
     },
     goRegister() {
       this.$router.push("/register");
-    },
-  },
+    }
+  }
 };
 </script>
